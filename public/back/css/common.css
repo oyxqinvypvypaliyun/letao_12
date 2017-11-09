@@ -28,11 +28,18 @@ a:active{
     margin-top: 150px;
 }
 /* 首页 */
+/* 左侧用户栏 */
 .lt_aside{
     width: 180px;
     height: 100%;
     background-color: #222d32;
     position: absolute;
+    left: 0;
+    top: 0;
+    transition: all 0.5s;
+}
+.lt_aside.now{
+    left: -180px;
 }
 .lt_aside .brand a{
     display: block;
@@ -74,9 +81,14 @@ a:active{
     height: 40px;
     padding-left: 60px;
 }
+/* 右侧内容栏 */
 .lt_main{
     padding-left: 180px;
     height: 100%;
+    transition: all 0.5s;
+}
+.lt_main.now{
+    padding-left: 0;
 }
 .lt_main .topbar{
     height: 50px;
@@ -89,4 +101,8 @@ a:active{
     color: #ffffff;
     font-size: 16px;
 }
-.lt_main .breadcrumb 
+.lt_main .container-fluid .lt_content .pic_left,
+.lt_main .container-fluid .lt_content .pic_right{
+    width: 45%;
+    height: 400px;
+}
