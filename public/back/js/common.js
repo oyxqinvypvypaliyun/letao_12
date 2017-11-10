@@ -1,3 +1,5 @@
+// 关闭进度条的进度环
+NProgress.configure({ showSpinner: false });
 // 进度条
 $(document).ajaxStart(function(){
     NProgress.start();
@@ -18,8 +20,6 @@ if(location.href.indexOf('login.html') == -1){
         }
     })
 }
-// 关闭进度条的进度环
-NProgress.configure({ showSpinner: false });
 
 // 分类管理
 $('.child').prev().on('click',function(){
