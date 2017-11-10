@@ -66,10 +66,27 @@
             </ol>
             <!-- 内容区 -->
             <div class="lt_content">
-
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td width="10%">序号</td>
+                            <td width="30%">用户名</td>
+                            <td width="30%">手机号</td>
+                            <td width="20%">状态</td>
+                            <td width="10%">操作</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 挖个小坑 -->
+                    </tbody>
+                </table>
             </div>
         </div>
-        
+        <div class="text-right">
+            <ul id="paginator">
+
+            </ul>
+        </div>
     </div>
 
 
@@ -94,11 +111,56 @@
         </div>
     </div>
 
+    <!-- 用户界面模板 -->
+    <script type="text/html" id="tpl">
+        {{each rows v i}}
+        <tr>
+            <td>{{(page-1)*size+i+1}}</td>
+            <td>{{v.username}}</td>
+            <td>{{v.mobile}}</td>
+            <td>{{v.isDelete==1?'正常':'禁用'}}</td>
+            <td data-id="{{v.id}}">
+                {{if v.isDelete===1}}
+                <button type="button" class="btn btn-danger btn-sm">禁用</button>
+                {{/if}}
+                {{if v.isDelete===0}}
+                <button type="button" class="btn btn-success btn-sm">启用</button>
+                {{/if}}
+            </td> 
+        </tr>
+        {{/each}}
+    </script>
+
+    <!-- 确定禁用 -->
+    <div class="modal fade" tabindex="-1" id="stateModal">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title">温馨提示</h4>
+                    </div>
+                    <div class="modal-body">
+                      <p class="text-danger"><span class="glyphicon glyphicon-info-sign"></span>您确定要执行此操作吗？</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                      <button type="button" class="btn btn-primary btn_state">确定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
     <!-- 引入JQ文件 -->
     <script src="./lib/jquery/jquery.min.js"></script>
     <!-- 引入bootstrap js文件 -->
     <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+    <!-- 引入bootstrap-paginator文件 -->
+    <script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+    <!-- 引入模板引擎 -->
+    <script src="./lib/template/template-web.js"></script>
     <!-- 引入bootstrap-validator JS文件 -->
     <script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
     <!-- 引入进度条插件JS -->
@@ -108,6 +170,6 @@
     <!-- 引入公共JS文件 -->
     <script src="./js/common.js"></script>
     <!-- 引入自己的JS文件 -->
-    <script src="./js/index.js"></script>
+    <script src="./js/user.js"></script>
 </body>
 </html>

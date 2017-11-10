@@ -19,6 +19,12 @@ a:active{
     text-decoration: none;
 }
 
+.table td{
+    text-align: center;
+}
+.table.table-bordered tr td{
+    vertical-align: middle;
+}
 
 /* 登录页面 */
 .login_bg{
