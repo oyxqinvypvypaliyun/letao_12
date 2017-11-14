@@ -33,6 +33,10 @@ a:active{
 .mt_login{
     margin-top: 150px;
 }
+
+.mb_first{
+    margin-bottom: 20px;
+}
 /* 首页 */
 /* 左侧用户栏 */
 .lt_aside{
@@ -111,4 +115,16 @@ a:active{
 .lt_main .container-fluid .lt_content .pic_right{
     width: 45%;
     height: 400px;
+}
+.upload_box{
+    position: relative;
+}
+.upload_box:hover >button{
+    background-color: blue;
+}
+.upload_box >input{
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
 }
