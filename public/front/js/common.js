@@ -46,5 +46,11 @@ var tools = {
   getParam: function (key) {
     return this.getParamObj()[key];
   },
+  //检测用户是否登录
+  checkLogin:function (data) {
+    if(data.error === 400){
+      location.href = "login.html?retUrl="+location.href;
+    }
+  }
   //作业：var obj = {name:"zs", age:18, desc:"呵呵"}  转换成字符串  name=zs&age=18&desc=呵呵
 }

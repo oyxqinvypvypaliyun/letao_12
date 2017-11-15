@@ -1,0 +1,65 @@
+.lt_content .lt_search{
+    padding: 10px;
+    position: relative;
+}
+.lt_content .lt_search input{
+    width: 100%;
+    height: 34px;
+    border-radius: 5px;
+    font-size: 12px;
+    border: 1px solid #007aff;
+    margin: 0;
+}
+.lt_content .lt_search button{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border-radius: 0 5px 5px 0;
+}
+
+/* 排序 */
+.lt_content .lt_sort {
+    padding: 0 10px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    background-color: #eee;
+}
+.lt_content .lt_sort a{
+    float: left;
+    width: 25%;
+    text-align: center;
+    color: #333333;
+}
+.lt_content .lt_sort a.now{
+    color: darkorange;
+}
+
+
+
+
+
+
+.proName{
+    min-height: 42px;
+}
+.loading {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #069;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top:200px;
+    animation: play 1s ease-in-out infinite;
+  }
+  
+  /*动画怎么写*/
+  @keyframes play {
+    from {
+      transform: translate(-50%) rotate(0deg);
+    }
+    to {
+      transform: translate(-50%) rotate(360deg);
+    }
+  }
